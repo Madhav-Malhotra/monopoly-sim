@@ -4,3 +4,4 @@
 .DS_Store
 /monopoly_simulator/__pycache__
 
+.venv/*
