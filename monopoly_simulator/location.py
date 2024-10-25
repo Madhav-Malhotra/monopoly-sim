@@ -1,7 +1,7 @@
-from monopoly_simulator.flag_config import flag_config_dict
-from monopoly_simulator.bank import Bank
+from bank import Bank
+from card_utility_actions import calculate_mortgage_owed
 import logging
-logger = logging.getLogger('monopoly_simulator.logging_info.location')
+logger = logging.getLogger('logging_info.location')
 
 class Location(object):
 
@@ -285,10 +285,6 @@ class TaxLocation(Location):
         """
         super().__init__(loc_class, name, start_position, end_position, color)
         self.amount_due = float(amount_due)
-
-    @staticmethod
-    def calculate_tax(location, player, current_gameboard):
-        return location.amount_due
 
 
 class RailroadLocation(Location):

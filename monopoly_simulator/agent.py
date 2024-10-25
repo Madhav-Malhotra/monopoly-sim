@@ -1,6 +1,6 @@
 from monopoly_simulator.flag_config import flag_config_dict
 import logging
-logger = logging.getLogger('monopoly_simulator.logging_info.agent')
+logger = logging.getLogger('logging_info.agent')
 
 
 class Agent(object):

@@ -1,9 +1,7 @@
-from monopoly_simulator import action_choices
-from monopoly_simulator import card_utility_actions
-from monopoly_simulator.location import  RealEstateLocation, UtilityLocation, RailroadLocation, TaxLocation
-from monopoly_simulator.bank import Bank
+from action_choices import *
+from location import  RealEstateLocation, UtilityLocation, RailroadLocation
 import logging
-logger = logging.getLogger('monopoly_simulator.logging_info.player')
+logger = logging.getLogger('logging_info.player')
 
 
 class Player(object):

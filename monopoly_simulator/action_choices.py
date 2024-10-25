@@ -2,7 +2,7 @@ from monopoly_simulator.flag_config import flag_config_dict
 from monopoly_simulator.bank import Bank
 from monopoly_simulator.dice import Dice
 import logging
-logger = logging.getLogger('monopoly_simulator.logging_info.action_choices')
+logger = logging.getLogger('logging_info.action_choices')
 
 
 def free_mortgage(player, asset, current_gameboard):

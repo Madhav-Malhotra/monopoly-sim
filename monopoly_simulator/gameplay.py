@@ -1,20 +1,26 @@
-from monopoly_simulator import initialize_game_elements
-from monopoly_simulator.action_choices import roll_die
+import initialize_game_elements
+from action_choices import roll_die
 import numpy as np
-from monopoly_simulator import card_utility_actions
-from monopoly_simulator import background_agent_v3_1
-from monopoly_simulator import read_write_current_state
+from card_utility_actions import move_player_after_die_roll
+import background_agent_v1
+import background_agent_v1_deprecated
+import background_agent_v2
+import background_agent_v3
+import background_agent_v3_1
+import baseline_agent
+import read_write_current_state
+import simple_decision_agent_1
 import json
-from monopoly_simulator import novelty_generator
-from monopoly_simulator import diagnostics
-from monopoly_simulator.agent import Agent
+import diagnostics
+import novelty_generator
+from agent import Agent
 import xlsxwriter
-from monopoly_simulator.flag_config import flag_config_dict
-from monopoly_simulator.logging_info import log_file_create
+from logging_info import log_file_create
 import os
 import time
 import logging
-logger = logging.getLogger('monopoly_simulator.logging_info')
+
+logger = logging.getLogger('logging_info')
 
 
 def write_history_to_file(game_board, workbook):
@@ -369,7 +375,7 @@ def play_game():
     player_decision_agents['player_3'] = Agent(**background_agent_v3_1.decision_agent_methods)
     player_decision_agents['player_4'] = Agent(**background_agent_v3_1.decision_agent_methods)
 
-    game_elements = set_up_board('../monopoly_game_schema_v1-2.json',
+    game_elements = set_up_board('/home/ec2-user/GNOME-p3-AWS/monopoly_game_schema_v1-2.json',
                                  player_decision_agents)
 
     #Comment out the above line and uncomment the piece of code to read the gameboard state from an existing json file so that
@@ -424,7 +430,7 @@ def play_game_in_tournament(game_seed, novelty_info=False, inject_novelty_functi
     player_decision_agents['player_3'] = Agent(**background_agent_v3_1.decision_agent_methods)
     player_decision_agents['player_4'] = Agent(**background_agent_v3_1.decision_agent_methods)
 
-    game_elements = set_up_board('../monopoly_game_schema_v1-2.json',
+    game_elements = set_up_board('/home/ec2-user/GNOME-p3-AWS/monopoly_game_schema_v1-2.json',
                                  player_decision_agents)
     
     #Comment out the above line and uncomment the piece of code to read the gameboard state from an existing json file so that
