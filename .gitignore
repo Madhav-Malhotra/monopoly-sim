@@ -12,3 +12,5 @@
 /monopoly_simulator/baseline_agent.py
 /monopoly_simulator/simple_decision_agent_1.py
 /monopoly_simulator/hypothetical_simulator.py
+
+.venv/*
